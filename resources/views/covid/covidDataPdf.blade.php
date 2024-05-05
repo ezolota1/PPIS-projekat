@@ -12,7 +12,7 @@
     <table border="1">
         <thead>
             <tr>
-                <th>SPOL</th>
+                <th>SPOOL</th>
                 <th>LE WBC</th>
                 <th>Limf%</th>
                 <th>Mid%</th>
