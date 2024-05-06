@@ -55,6 +55,9 @@ class User extends Authenticatable
         if ($role == 'lab') {
             $role_id = 2;
         }
+        else if ($role == 'pat'){
+            $role_id = 3;
+        }
         return $this->role->id === $role_id;
     }
 }

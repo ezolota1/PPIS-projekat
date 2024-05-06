@@ -25,5 +25,13 @@ class UserRolesSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        // Inserting patient role
+        DB::table('user_roles')->insert([
+            'role' => 'patient',
+            'keyword' => Hash::make('pat'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
