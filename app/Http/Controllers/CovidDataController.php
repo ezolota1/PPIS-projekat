@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\CovidData;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use Log;
 
 class CovidDataController extends Controller
 {
@@ -113,9 +114,9 @@ class CovidDataController extends Controller
         $options->set('isRemoteEnabled', true);
         $dompdf = new Dompdf($options);
 
+     
         $html = view('covid.covidDataPdf', compact('data'))->render();
         $dompdf->loadHtml($html);
-
         $dompdf->render();
 
         return $dompdf->stream('covid_data_' . $id . '.pdf');

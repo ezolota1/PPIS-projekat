@@ -7,32 +7,141 @@
     <title>COVID Data Report</title>
 </head>
 
-<body>
-    <h1>COVID Data Report</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>SPOOL</th>
-                <th>LE WBC</th>
-                <th>Limf%</th>
-                <th>Mid%</th>
-                <th>Gran%</th>
-                <th>HGB</th>
-                <th>Final Result</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ $data->SPOL }}</td>
-                <td>{{ $data->LE_WBC }}</td>
-                <td>{{ $data->Limf }}</td>
-                <td>{{ $data->Mid }}</td>
-                <td>{{ $data->Gran }}</td>
-                <td>{{ $data->HGB }}</td>
-                <td>{{ $data->FinalResult }}</td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+<style>
+    h4 {
+    margin: 0;
+}
+.w-full {
+    width: 100%;
+}
+.w-half {
+    width: 50%;
+}
+.margin-top {
+    margin-top: 1.25rem;
+}
+.footer {
+    font-size: 0.875rem;
+    padding: 1rem;
+    background-color: rgb(241 245 249);
+}
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+table.products {
+    font-size: 0.875rem;
+}
+table.products tr {
+    background-color: rgb(96 165 250);
+}
+table.products th {
+    color: #ffffff;
+    padding: 0.5rem;
+}
+table tr.items {
+    background-color: rgb(241 245 249);
+    text-align: center;
+}
+table tr.items td {
+    padding: 0.5rem;
+}
+.total {
+    text-align: left;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+.hematology{
+    text-align:left;
+}
+</style>
 
+<body>
+    <table class="w-full">
+        <tr>
+            <td class="w-half">
+               
+            </td>
+            <td class="w-half">
+                <h2>Covid Data Report: 1</h2>
+            </td>
+        </tr>
+    </table>
+ 
+    <div class="margin-top">
+        <table class="w-full">
+            <tr>
+                <td class="w-half">
+                    <div><h4>Patient:</h4></div>
+                    <div>John Doe</div>
+                    <div>123 Acme Str.</div>
+                    <div>Gender: Male</div>
+                </td>
+                <td class="w-half">
+                    <div><h4>Doctor:</h4></div>
+                    <div>Nadir Karaman</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    
+    <div class="margin-top">
+        <table class="products">
+            <tr>
+                <th>Hematology</th>
+                <th>Mark</th>
+                <th>Result</th>
+                <th>Measurement Unit</th>
+                <th>Reference values</th>
+            </tr>
+            <tr class="items">
+                <td class="hematology">White Blood Cell Count</td>
+                <td>WBC</td>
+                 <td>{{ $data->LE_WBC }}</td>
+                <td>x10^9/L</td>
+                <td>3.4 - 9.7</td>                
+            </tr>
+            <tr class="items">
+                <td class="hematology"> Lymphocytes</td>
+                <td>Limf%</td>
+                <td>{{ $data->Limf }}</td>
+                <td>%</td>
+                <td>20% - 40%</td>               
+            </tr>
+            <tr class="items">
+                <td class="hematology">Monocytes </td>
+                <td>Mid%</td>
+                <td>{{ $data->Mid }}</td>
+                <td>%</td>
+                <td>2% - 8%</td>
+                
+            </tr>
+            <tr class="items">
+                <td class="hematology">Granulocytes </td>
+                <td>Gran%</td>
+                <td>{{ $data->Gran }}</td>
+                <td>%</td>
+                <td>50% - 70 %</td>          
+            </tr>
+            <tr class="items">
+                <td class="hematology">Hemoglobin </td>
+                <td>HGB</td>
+                <td>{{ $data->HGB }}</td>
+                <td>g/L</td>
+                <td>13.8-17.5</td>        
+            </tr>
+            
+        </table>
+    </div>
+ 
+    <div class="total">
+        Final Result: {{ $data->FinalResult }}
+    </div>
+ 
+    <div class="footer margin-top">
+        <div>Thank you</div>
+        <div>&copy; Laravel Daily</div>
+    </div>
+</body>
 </html>
