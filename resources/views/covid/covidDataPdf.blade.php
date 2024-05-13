@@ -43,7 +43,15 @@ table tr.items {
     background-color: rgb(241 245 249);
     text-align: center;
 }
+table tr.items2 {
+    background-color: rgb(255 255 255);
+    text-align: center;
+}
+
 table tr.items td {
+    padding: 0.5rem;
+}
+table tr.items2 td {
     padding: 0.5rem;
 }
 .total {
@@ -102,7 +110,7 @@ table tr.items td {
                 <td>x10^9/L</td>
                 <td>3.4 - 9.7</td>                
             </tr>
-            <tr class="items">
+            <tr class="items2">
                 <td class="hematology"> Lymphocytes</td>
                 <td>Limf%</td>
                 <td>{{ $data->Limf }}</td>
@@ -117,7 +125,7 @@ table tr.items td {
                 <td>2% - 8%</td>
                 
             </tr>
-            <tr class="items">
+            <tr class="items2">
                 <td class="hematology">Granulocytes </td>
                 <td>Gran%</td>
                 <td>{{ $data->Gran }}</td>
@@ -140,8 +148,8 @@ table tr.items td {
     </div>
  
     <div class="footer margin-top">
-        <div>Thank you</div>
-        <div>&copy; Laravel Daily</div>
+        <div>Stay safe</div>
+        <div>&copy; Your COVID-19 Project Team</div>
     </div>
 </body>
 </html>

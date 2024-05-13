@@ -8,10 +8,16 @@
 
             <h2>Covid-19 Project Data</h2>
 
-            @if(auth()->user()->role_id == 2)
-            <a href="{{ route('covid.create') }}" class="btn btn-primary mb-3">Add New</a>
+            @if(auth()->user()->role_id == 1)
+            <form method="POST" action="{{ route('covid.generatePdfGlobal') }}">
+                                @csrf
+                                <button type="submit" class="btn btn-sm btn-success">Statistics PDF</button>
+            </form>
             @endif
 
+             @if(auth()->user()->role_id == 2)
+            <a href="{{ route('covid.create') }}" class="btn btn-primary mb-3">Add New</a>
+            @endif
             <table class="table">
                 <thead>
                     <tr>

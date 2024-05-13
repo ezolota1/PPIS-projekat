@@ -11,9 +11,11 @@
         <div class="mb-3">
             <label for="finalResult" class="form-label">Final Result</label>
             <select class="form-control" id="finalResult" name="final_result">
-                <option value="heavy">Heavy</option>
-                <option value="medium">Medium</option>
-                <option value="light">Light</option>
+                <option value="Undetermined">Undetermined</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <option value="Serious">Serious</option>
+                <option value="Critical">Critical</option>
             </select>
         </div>
 

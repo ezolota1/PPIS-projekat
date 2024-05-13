@@ -121,4 +121,20 @@ class CovidDataController extends Controller
 
         return $dompdf->stream('covid_data_' . $id . '.pdf');
     }
+
+    public function generatePdfGlobal()
+    {
+         $data = CovidData::all();
+
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $options->set('isRemoteEnabled', true);
+        $dompdf = new Dompdf($options);
+
+     
+        $html = view('covid.covidDataPdfGlobal', compact('data'))->render();
+        $dompdf->loadHtml($html);
+        $dompdf->render();
+        return $dompdf->stream('Covid_Statistics.pdf');
+    }
 }

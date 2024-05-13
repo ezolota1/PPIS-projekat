@@ -29,3 +29,4 @@ Route::middleware('auth', 'role:doc')->get('/covid/editFinalResult/{id}', [Covid
 Route::middleware('auth', 'role:doc')->put('/covid/updateFinalResult/{id}', [CovidDataController::class, 'updateFinalResult'])->name('covid.updateFinalResult');
 
 Route::post('/covid/{id}/pdf', [CovidDataController::class, 'generatePdf'])->name('covid.generatePdf');
+Route::post('/covid/pdf', [CovidDataController::class, 'generatePdfGlobal'])->name('covid.generatePdfGlobal');
