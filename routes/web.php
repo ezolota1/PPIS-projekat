@@ -27,6 +27,9 @@ Route::middleware('auth', 'role:lab')->get('/covid/edit/{id}', [CovidDataControl
 Route::middleware('auth', 'role:lab')->put('/covid/update/{id}', [CovidDataController::class, 'update'])->name('covid.update');
 Route::middleware('auth', 'role:doc')->get('/covid/editFinalResult/{id}', [CovidDataController::class, 'editFinalResult'])->name('covid.editFinalResult');
 Route::middleware('auth', 'role:doc')->put('/covid/updateFinalResult/{id}', [CovidDataController::class, 'updateFinalResult'])->name('covid.updateFinalResult');
+Route::middleware('auth')->get('/covid', [CovidDataController::class, 'index'])->name('covid.index');
+Route::middleware('auth')->get('/reset-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::middleware('auth')->post('/reset-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'resetPassword'])->name('password.update');
 
 Route::post('/covid/{id}/pdf', [CovidDataController::class, 'generatePdf'])->name('covid.generatePdf');
 Route::post('/covid/pdf', [CovidDataController::class, 'generatePdfGlobal'])->name('covid.generatePdfGlobal');
