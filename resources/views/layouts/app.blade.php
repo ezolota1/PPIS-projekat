@@ -72,7 +72,7 @@
                                     @csrf
                                 </form>
 
-                                <a class="dropdown-item" href="{{ route('password.reset') }}" method="GET">
+                                <a class="dropdown-item" href="{{ route('password.expired') }}" method="GET">
                                     {{ __('Reset password') }}
                                 </a>
                             </div>
