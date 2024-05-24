@@ -71,7 +71,7 @@ table tr.items2 td {
                
             </td>
             <td class="w-half">
-                <h2>Covid Data Report: 1</h2>
+                <h2>Covid Data Report: {{$data->id}}</h2>
             </td>
         </tr>
     </table>

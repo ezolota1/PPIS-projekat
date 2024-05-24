@@ -11,7 +11,7 @@
             @if(auth()->user()->role_id == 1)
             <form method="POST" action="{{ route('covid.generatePdfGlobal') }}">
                                 @csrf
-                                <button type="submit" class="btn btn-sm btn-success">Statistics PDF</button>
+                                <button type="submit" class="btn btn-sm btn-success">Statistics</button>
             </form>
             @endif
 

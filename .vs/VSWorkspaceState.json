@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\database",
+    "\\database\\seeders",
     "\\public",
+    "\\public\\images",
+    "\\public\\js",
     "\\resources",
-    "\\resources\\css",
-    "\\resources\\js",
     "\\resources\\views",
-    "\\resources\\views\\auth",
     "\\resources\\views\\covid",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\covid\\covidDataPdfGlobal.blade.php",
+  "SelectedNode": "\\resources\\views\\covid\\create.blade.php",
   "PreviewInSolutionExplorer": false
 }
