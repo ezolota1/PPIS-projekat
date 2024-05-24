@@ -3,24 +3,19 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
 
-class ResetPasswordController extends Controller
+class ExpiredPasswordController extends Controller
 {
-
-    public function showResetForm()
+    public function showExpiredPasswordForm()
     {
-        return view('auth.passwords.reset');
+        return view('auth.passwords.expired');
     }
 
-    public function resetPassword(Request $request)
+    public function updateExpiredPassword(Request $request)
     {
         $request->validate([
             'password' => 'required|string|min:8|confirmed',

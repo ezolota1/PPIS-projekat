@@ -33,5 +33,13 @@ class UserRolesSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
+        // Inserting administrator role
+        DB::table('user_roles')->insert([
+            'role' => 'administrator',
+            'keyword' => Hash::make('admin'),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }

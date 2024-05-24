@@ -58,6 +58,9 @@ class User extends Authenticatable
         else if ($role == 'pat'){
             $role_id = 3;
         }
+        else if ($role == 'admin'){
+            $role_id = 4;
+        }
         return $this->role->id === $role_id;
     }
 }
